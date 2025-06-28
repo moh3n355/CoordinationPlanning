@@ -56,8 +56,8 @@ INSERT INTO admins (id, name, password) VALUES (1, 'mohsen', '7410');
 ```
 
 > [!CAUTION]
-> Don't extract files that are in the test folder; please 	<ins>Just</ins> put the test folder in your XAMPP/htdocs.
-> Then go to http://localhost/test/ in your browser.
+> # Don't extract files that are in the test folder; please 	<ins>Just</ins> put the test folder in your XAMPP/htdocs.
+> # Then go to http://localhost/test/ in your browser.
 
 ## UserName | UserName
 ### Moh3n | 123
