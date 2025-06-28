@@ -6,11 +6,11 @@ $ClientObject = $_SESSION['ClientObject'];
 ?>
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ویرایش اطلاعات</title>
+  <title>Edit Information</title>
   
   <style>
     body {
@@ -18,7 +18,7 @@ $ClientObject = $_SESSION['ClientObject'];
       background-color: #f4f4f4;
       padding: 30px;
       text-align: center;
-      direction: rtl;
+      direction: ltr;
     }
 
     form {
@@ -32,7 +32,7 @@ $ClientObject = $_SESSION['ClientObject'];
 
     label {
       display: block;
-      text-align: right;
+      text-align: left;
       margin-bottom: 10px;
     }
 
@@ -76,12 +76,12 @@ $ClientObject = $_SESSION['ClientObject'];
 
   <form action="/TEST/user/client/edit_info_prossec.php" method="POST">
     <label>
-      نام:<br>
+      Username:<br>
       <input type="text" name="username" value="<?php echo $ClientObject->GetName(); ?>">
     </label>
 
     <label>
-      رمز عبور:<br>
+      Password:<br>
       <input type="text" name="userpassword" value="<?php echo $ClientObject->GetPassword(); ?>">
     </label>
 

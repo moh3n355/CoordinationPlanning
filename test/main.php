@@ -1,12 +1,13 @@
 <?php
+#check
 session_start();
 
 # for comeback error that will create in the auth/validation
-$_SESSION['path'] = "/test/admin_main.php";
+$_SESSION['path'] = "/test/main.php";
 
-# declare table for edit admin information in the that used check isAdmin in the auth/login_prossec and check isAdmin
-# for create a object as admin class(admin/user)
-$_SESSION['table'] = "admins";
+# declare table for edit admin information in the that used in the auth/login/prossecc
+# for create an object as admin class(admin/user)
+$_SESSION['table'] = "users";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ $_SESSION['table'] = "admins";
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin</title>
+  <title>Main</title>
 
   <style>
     body {
@@ -63,8 +64,13 @@ $_SESSION['table'] = "admins";
       color: white;
     }
 
-    input[value="Back"] {
+    input[value="Register"] {
       background-color: red;
+      color: white;
+    }
+
+    input[value="Admin"] {
+      background-color: orange;
       color: white;
     }
 
@@ -79,22 +85,23 @@ $_SESSION['table'] = "admins";
   <form action="/TEST/auth/login_prossec.php" method="POST">
     <label>
       name:<br>
-      <input type="text" name="username"
-        value="<?php echo isset($_COOKIE['AdminName']) ? $_COOKIE['AdminName'] : ''; ?>">
+      <input type="text" name="username" 
+        value="<?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?>">
     </label>
 
     <label>
       password:<br>
-      <input type="password" name="userpassword"
-        value="<?php echo isset($_COOKIE['AdminPassword']) ? $_COOKIE['AdminPassword'] : ''; ?>">
+      <input type="password" name="userpassword" 
+        value="<?php echo isset($_COOKIE['userpassword']) ? $_COOKIE['userpassword'] : ''; ?>">
     </label>
     
     <input type="submit" value="submit">
   </form><br>
 
-  <input type="button" value="Back" onclick="window.location.href='/test/main.php'"><br><br>
+  <input type="button" value="Register" onclick="window.location.href='/test/rigester_main.php'"><br><br>
 
-  <!-- error received from auth/validation or auth/login_prossecc -->
+  <input type="button" value="Admin" onclick="window.location.href='/test/admin_main.php'">
+
   <p>
     <?php 
       echo isset($_SESSION["error"]) ? $_SESSION["error"] : null; 

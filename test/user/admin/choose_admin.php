@@ -45,8 +45,11 @@
   <input type="button" value="Delete User" 
     class="btn yellow" onclick="window.location.href='/TEST/user/admin/delete_user.php'"><br>
 
+    <input type="button" value="Display Users info" 
+    class="btn yellow" onclick="window.location.href='/TEST/user/admin/Display_users_info.php'"><br>
+
   <input type="button" value="Back" 
-    class="btn red" onclick="window.location.href='/TEST/index.php'"><br>
+    class="btn red" onclick="window.location.href='/TEST/main.php'"><br>
 
 </body>
 </html>

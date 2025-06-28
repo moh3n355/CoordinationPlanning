@@ -8,11 +8,11 @@ $AllName = $obj->Recive();
 ?>
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>انتخاب افراد</title>
+  <title>Choose Pesrons</title>
 
   <style>
     body {
@@ -36,7 +36,7 @@ $AllName = $obj->Recive();
     }
 
     .checkbox-group {
-      text-align: right;
+      text-align: left;
       margin-bottom: 8px;
     }
 
@@ -72,7 +72,7 @@ $AllName = $obj->Recive();
 </head>
 <body>
 
-  <h3>افرادی را انتخاب کنید:</h3>
+  <h3>Choose PSersons:</h3>
 
   <form action="/test/user/admin/resault_prossecc.php" method="POST">
     <?php 
@@ -83,7 +83,7 @@ $AllName = $obj->Recive();
       </div>
     <?php } ?>
 
-    <input type="submit" value="ارسال">
+    <input type="submit" value="submit">
   </form>
 
   <input type="button" value="Back" onclick="window.location.href='/test/user/admin/choose_admin.php'">

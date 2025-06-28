@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>صفحه کاربر</title>
+  <title>Client</title>
 
   <style>
     body {
@@ -35,17 +35,17 @@
 </head>
 <body>
 
-  <input type="button" value="ویرایش اطلاعات"
+  <input type="button" value="Edit Information"
          class="btn green"
          onclick="window.location.href='/TEST/user/client/edit_info_client.php'"><br>
 
-  <input type="button" value="انتخاب زمان‌ها"
+  <input type="button" value="Edit times"
          class="btn orange"
          onclick="window.location.href='/TEST/user/client/choose_times.php'"><br>
 
-  <input type="button" value="بازگشت"
+  <input type="button" value="Back"
          class="btn red"
-         onclick="window.location.href='/TEST/index.php'"><br>
+         onclick="window.location.href='../../main.php'"><br>
 
 </body>
 </html>

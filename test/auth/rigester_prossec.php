@@ -9,18 +9,27 @@ $UserPassword = $_POST['userpassword'];
 $valid = validation::validize($UserName, $UserPassword, $_SESSION['path']);
 if($valid = true){
 
-    #check username is uniqe in the database
     #rigester in auth/auth
     $rigesterObj = new rigester($UserName, $UserPassword);
-    $resault = $rigesterObj->check();
-    if(!in_array($UserName, $resault)){
-        $rigesterObj->registerize();
-        $_SESSION["error"] = "rigeester was successfully";
-        header("Location: ../index.php");
-    }
-    else{
-        $_SESSION["error"] = "you user name already is exsitence";
-        header("Location: ../rigester_main.php");
-    }
+
+        #check username and password is authorize
+        $authorize = $rigesterObj->authorize();
+        if($authorize !== false){
+            
+            #check username is uniqe in the database
+            $resault = $rigesterObj->check();
+            if(!in_array($UserName, $resault)){
+            $rigesterObj->registerize();
+            $_SESSION["error"] = "rigeester was successfully";
+            header("Location: ../main.php");
+            }
+            else{
+            $_SESSION["error"] = "your user name already is exsitence";
+            header("Location: ../rigester_main.php");
+            } 
+        }
+        else{
+            header("Location: ../rigester_main.php");
+        }
 }
 ?>

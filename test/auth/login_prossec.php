@@ -62,7 +62,7 @@ if($valid == true){
     }
     else{
         $_SESSION["error"] = "your user name or password is incorrect";
-        header("Location: ../index.php");
+        header("Location: ../main.php");
     }
 }
 ?>

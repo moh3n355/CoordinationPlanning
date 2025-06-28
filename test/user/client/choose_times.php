@@ -7,21 +7,21 @@ $ClientObject = $_SESSION['ClientObject'];
 $data = $ClientObject->data;
 
 $days = [
-    "0shanbe" => "شنبه",
-    "1shanbe" => "یکشنبه",
-    "2shanbe" => "دوشنبه",
-    "3shanbe" => "سه‌شنبه",
-    "4shanbe" => "چهارشنبه",
-    "5shanbe" => "پنجشنبه",
-    "6shanbe" => "جمعه",
+    "0shanbe" => "Saturday",
+    "1shanbe" => "Sunday",
+    "2shanbe" => "Monday",
+    "3shanbe" => "Tuesday",
+    "4shanbe" => "Wednesday",
+    "5shanbe" => "Thursday",
+    "6shanbe" => "Friday",
 ];
 ?>
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <title>انتخاب وضعیت روزهای هفته</title>
+  <title>edit chooses times</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <style>
@@ -29,7 +29,7 @@ $days = [
       font-family: Tahoma, sans-serif;
       background-color: #f4f4f4;
       padding: 30px;
-      direction: rtl;
+      direction: ltr;
       text-align: center;
     }
 
@@ -49,7 +49,7 @@ $days = [
       border: 1px solid #ccc;
       border-radius: 6px;
       box-shadow: 0 0 6px rgba(0,0,0,0.1);
-      text-align: right;
+      text-align: left;
     }
 
     legend {
@@ -97,32 +97,32 @@ $days = [
 </head>
 <body>
 
-  <h2>انتخاب وضعیت حضور در روزهای هفته</h2>
+  <h2>Choose status for every day</h2>
 
   <form action="/test/user/client/update_times_prossec.php" method="POST">
-    <?php foreach ($days as $key => $label): ?>
+    <?php foreach ($days as $key => $label){ ?>
       <fieldset>
         <legend><?php echo $label; ?></legend>
         <label>
           <input type="radio" name="<?php echo $key ?>" value="2" <?= $data[$key] == 2 ? "checked" : "" ?>>
-          می‌توانم بیام
+          I can to come
         </label>
         <label>
           <input type="radio" name="<?php echo $key ?>" value="1" <?= $data[$key] == 1 ? "checked" : "" ?>>
-          ترجیح می‌دهم نیام
+          prefer not to come
         </label>
         <label>
           <input type="radio" name="<?php echo $key ?>" value="0" <?= $data[$key] == 0 ? "checked" : "" ?>>
-          نمی‌توانم بیام
+          I can't to come
         </label>
       </fieldset>
-    <?php endforeach; ?>
+    <?php }; ?>
 
-    <button type="submit">ارسال</button>
+    <button type="submit">submit</button>
   </form>
 
   <br>
-  <input type="button" value="بازگشت"
+  <input type="button" value="Back"
          onclick="window.location.href='/test/user/client/choose_client.php'">
 
   <p>

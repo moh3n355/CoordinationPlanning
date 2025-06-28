@@ -15,33 +15,33 @@ foreach ($data as $name => $info){
     }
 }
 
-$causes = ["کسانی ک نمیتونن بیان:", "کسانی که ترجیج میدن نیان:","کسانی ک میتونن بیان:"];
+$causes = ["Those who can't come:", "Those who prefer not to come:", "Those who can to come:"];
 
 $days = [
-    "0shanbe" => "شنبه",
-    "1shanbe" => "یکشنبه",
-    "2shanbe" => "دوشنبه",
-    "3shanbe" => "سه‌شنبه",
-    "4shanbe" => "چهارشنبه",
-    "5shanbe" => "پنجشنبه",
-    "6shanbe" => "جمعه",
+    "0shanbe" => "Saturday",
+    "1shanbe" => "Sunday",
+    "2shanbe" => "Monday",
+    "3shanbe" => "Tuesday",
+    "4shanbe" => "Wednesday",
+    "5shanbe" => "Thursday",
+    "6shanbe" => "Friday",
 ];
 ?>
 
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>نتیجه نهایی</title>
+  <title>Final Resault</title>
 
   <style>
     body {
       font-family: Tahoma, sans-serif;
       background-color: #f4f4f4;
       padding: 30px;
-      direction: rtl;
-      text-align: right;
+      direction: ltr;
+      text-align: left;
     }
 
     p {
@@ -96,7 +96,7 @@ $days = [
 </head>
 <body>
 
-<p class="recommend">روزهای پیشنهادی:</p>
+<p class="recommend">Recommend Days:</p>
 <?php
 foreach ($RecommendDay as $day => $value) {
     echo $days[$day . 'shanbe'] . " | ";
@@ -104,7 +104,7 @@ foreach ($RecommendDay as $day => $value) {
 ?>
 <br><br>
 
-<input type="button" value="بازگشت" class="button"
+<input type="button" value="Back" class="button"
        onclick="window.location.href='/test/user/admin/show_resault.php'">
 <br><br>
 
@@ -115,7 +115,7 @@ foreach ($days as $key => $label) {
         <legend><?php echo $label; ?></legend>
 
         <?php if ($CanBe[$key] == 0) { ?>
-            <p class="not-available">در این روز نمیشود برنامه چید</p>
+            <p class="not-available">On this day, scheduling is not possible.</p>
         <?php } ?>
 
         <?php for ($i = 2; $i > -1; $i--) { ?>

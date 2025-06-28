@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS test;
-CREATE DATABASE test;
-USE test;
+CREATE DATABASE test
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_general_ci;
 
 USE test;
 
 CREATE TABLE users (
     id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(20) NOT NULL,
-    password VARCHAR(10) NOT NULL,
+    name VARCHAR(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+    password VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
     0shanbe INT(11) NOT NULL DEFAULT 0,
     1shanbe INT(11) NOT NULL DEFAULT 0,
     2shanbe INT(11) NOT NULL DEFAULT 0,
@@ -15,7 +15,7 @@ CREATE TABLE users (
     4shanbe INT(11) NOT NULL DEFAULT 0,
     5shanbe INT(11) NOT NULL DEFAULT 0,
     6shanbe INT(11) NOT NULL DEFAULT 0
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO users (id, name, password, 0shanbe, 1shanbe, 2shanbe, 3shanbe, 4shanbe, 5shanbe, 6shanbe) VALUES
 (1, 'moh3n',  '123',   2, 2, 1, 1, 2, 2, 1),
@@ -27,9 +27,9 @@ INSERT INTO users (id, name, password, 0shanbe, 1shanbe, 2shanbe, 3shanbe, 4shan
 
 CREATE TABLE admins (
     id INT(11) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
+    name VARCHAR(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL UNIQUE,
+    password VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
     PRIMARY KEY (id)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 INSERT INTO admins (name, password) VALUES ('mohsen', '7410');

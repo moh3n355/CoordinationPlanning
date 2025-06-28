@@ -86,7 +86,7 @@
     <input type="submit" value="submit">
   </form><br>
 
-  <input type="button" value="Back" onclick="window.location.href='/test/index.php'"><br><br>
+  <input type="button" value="Back" onclick="window.location.href='/test/main.php'"><br><br>
 
   <!-- error received from auth/validation or auth/rigester_prossecc -->
   <p>

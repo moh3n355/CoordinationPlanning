@@ -6,11 +6,11 @@ $_SESSION['path'] = '/test/user/admin/edit_information.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ویرایش اطلاعات</title>
+  <title>Edit information</title>
 
   <style>
     body {
@@ -18,7 +18,7 @@ $_SESSION['path'] = '/test/user/admin/edit_information.php';
       background-color: #f4f4f4;
       padding: 30px;
       text-align: center;
-      direction: rtl;
+      direction: ltr;
     }
 
     form {
@@ -32,7 +32,7 @@ $_SESSION['path'] = '/test/user/admin/edit_information.php';
 
     label {
       display: block;
-      text-align: right;
+      text-align: left;
       margin-bottom: 10px;
     }
 
@@ -75,12 +75,12 @@ $_SESSION['path'] = '/test/user/admin/edit_information.php';
 
   <form action="/TEST/user/admin/edit_prossecc.php" method="POST">
     <label>
-      نام:<br>
+      name:<br>
       <input type="text" name="username" value="<?php echo $AdminObject->GetName(); ?>">
     </label>
 
     <label>
-      رمز عبور:<br>
+      password:<br>
       <input type="text" name="userpassword" value="<?php echo $AdminObject->GetPassword(); ?>">
     </label>
     
