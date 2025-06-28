@@ -15,7 +15,7 @@ else{
 }
 
 #for create tests and tables that we need
-$sqlFile = __DIR__ . '/db/db.sql'; 
+$sqlFile = __DIR__ . '/../db/db.sql';  
 
 #check $_POST isset and is not empty(just user)
 $valid = validation::validize($user, 'pass', $_SESSION['path']);
