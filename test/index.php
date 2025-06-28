@@ -1,4 +1,7 @@
 <?php
+#this page created because this project will run on the licalhost
+#any localhost has diffrent username and password
+#for work with database, we recive thats as client
 session_start();
 
 # for comeback error that will create in the auth/validation
