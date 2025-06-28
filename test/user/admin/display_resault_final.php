@@ -1,31 +1,6 @@
 <?php
 include "../user.php";
 session_start();
-
-$CanBe = $_SESSION['CanBe'];
-$RecommendDay = $_SESSION['RecommendDay'];
-$NamesOfThatSelected = $_SESSION['NamesOfThatSelected'];
-
-#Admin object created in the auth/login_prossec
-$data = $_SESSION['AdminObject']->data;
-
-foreach ($data as $name => $info){
-    if(in_array($name, $NamesOfThatSelected)){
-        $$name = $info;
-    }
-}
-
-$causes = ["Those who can't come:", "Those who prefer not to come:", "Those who can to come:"];
-
-$days = [
-    "0shanbe" => "Saturday",
-    "1shanbe" => "Sunday",
-    "2shanbe" => "Monday",
-    "3shanbe" => "Tuesday",
-    "4shanbe" => "Wednesday",
-    "5shanbe" => "Thursday",
-    "6shanbe" => "Friday",
-];
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +72,35 @@ $days = [
 <body>
 
 <p class="recommend">Recommend Days:</p>
+
 <?php
+
+#SESSION['Canbe'] and ['RecommendDay'] and ['NamesOfSelected'] Recived as /user/admin/resault_prossecc
+$CanBe = $_SESSION['CanBe'];
+$RecommendDay = $_SESSION['RecommendDay'];
+$NamesOfThatSelected = $_SESSION['NamesOfThatSelected'];
+
+#Admin object created in the auth/login_prossec
+$data = $_SESSION['AdminObject']->data;
+
+foreach ($data as $name => $info){
+  if(in_array($name, $NamesOfThatSelected)){
+      $$name = $info;
+  }
+}
+
+$causes = ["Those who can't come:", "Those who prefer not to come:", "Those who can to come:"];
+
+$days = [
+  "0shanbe" => "Saturday",
+  "1shanbe" => "Sunday",
+  "2shanbe" => "Monday",
+  "3shanbe" => "Tuesday",
+  "4shanbe" => "Wednesday",
+  "5shanbe" => "Thursday",
+  "6shanbe" => "Friday",
+];
+
 foreach ($RecommendDay as $day => $value) {
     echo $days[$day . 'shanbe'] . " | ";
 }

@@ -1,7 +1,11 @@
 <?php
 include "../user.php";
 session_start();
+
+#Admin object created in the auth/login_prossec
 $AdminObject = $_SESSION['AdminObject'];
+
+# for comeback error that will create in the auth/validation
 $_SESSION['path'] = '/test/user/admin/edit_information.php';
 ?>
 
