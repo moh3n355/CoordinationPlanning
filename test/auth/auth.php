@@ -48,8 +48,14 @@ class rigester implements BaseAuth {
     public function registerize(){
 
         #AddUser in the db/put_in_db
+        try{
         $ObjectForRegister = new AddUser;
         $ObjectForRegister->add($this->name, $this->password);
+        return true;
+        }
+        catch(PDOException){
+            return false;
+        }
     }
 }
 ?>
