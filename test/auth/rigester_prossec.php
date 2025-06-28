@@ -7,13 +7,14 @@ $UserPassword = $_POST['userpassword'];
 
 #check $_POST isset and is not empty
 $valid = validation::validize($UserName, $UserPassword, $_SESSION['path']);
-if($valid = true){
+if($valid == true){
 
     #rigester in auth/auth
     $rigesterObj = new rigester($UserName, $UserPassword);
+    $authorizion = new authorizion($UserName, $UserPassword);
 
         #check username and password is authorize
-        $authorize = $rigesterObj->authorize();
+        $authorize = $authorizion->check();
         if($authorize !== false){
             
             #check username is uniqe in the database
